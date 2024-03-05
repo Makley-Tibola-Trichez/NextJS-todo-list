@@ -3,18 +3,18 @@ import { CircularProgress } from '@nextui-org/react';
 import { Suspense, lazy } from 'react';
 import { useTasksStoreContext } from '~/context/tasksStoreContext';
 import { TaskData } from '~/types/task.types';
-const TaskItem = lazy(() => import('../components/taskItem/taskItem'));
+
+const TaskItem = lazy(() => import('../../components/taskItem/taskItem'));
 
 export default function Home() {
   const { tasks, updateTask } = useTasksStoreContext();
-  const _undoneTasks = Array.from(tasks.values()).filter(({ done }) => !done);
 
+  const _doneTasks = Array.from(tasks.values()).filter(({ done }) => done);
   const handleUpdateTask = (task: TaskData) => {
-    updateTask({ ...task, done: true });
+    updateTask({ ...task, done: false });
   };
-
   return (
-    <main className="flex justify-center items-center ">
+    <main className="flex justify-center items-center flex-col gap-4 ">
       <div className="flex gap-4 flex-col py-8 min-w-[50%]">
         <Suspense
           fallback={
@@ -23,7 +23,7 @@ export default function Home() {
             </div>
           }
         >
-          {_undoneTasks.map((task) => (
+          {_doneTasks.map((task) => (
             <TaskItem
               task={task}
               key={task.id}
