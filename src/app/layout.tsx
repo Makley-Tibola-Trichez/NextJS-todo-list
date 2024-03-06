@@ -1,9 +1,10 @@
 'use client';
 import { NextUIProvider } from '@nextui-org/react';
 import { usePathname } from 'next/navigation';
-import { PageNavbar } from '~/app/pageNavbar';
+import { PageNavbar } from '~/app/page-navbar';
 import './globals.css';
-import { TasksStoreProvider } from '~/context/tasksStoreContext';
+import { TasksStoreProvider } from '~/context/tasks-store.context/tasks-store.context';
+import { AddEditTaskProvider } from '~/context/add-edit-task.context/add-edit-task.context';
 
 export default function RootLayout({
   children,
@@ -15,8 +16,10 @@ export default function RootLayout({
       <body>
         <NextUIProvider>
           <TasksStoreProvider>
-            <PageNavbar />
-            {children}
+            <AddEditTaskProvider>
+              <PageNavbar />
+              {children}
+            </AddEditTaskProvider>
           </TasksStoreProvider>
         </NextUIProvider>
       </body>

@@ -1,6 +1,4 @@
-import { PropsWithChildren } from 'react';
-
-type AlertProps = PropsWithChildren<{ variant?: 'danger' }>;
+type AlertProps = React.PropsWithChildren<{ variant?: 'danger' }>;
 
 export function Alert({ children, variant }: AlertProps) {
   return (

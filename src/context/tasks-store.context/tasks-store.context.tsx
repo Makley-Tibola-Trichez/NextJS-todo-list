@@ -1,14 +1,14 @@
 'use client';
-import { PropsWithChildren, createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState } from 'react';
 import { TaskData } from '~/types/task.types';
-import { TasksStoreContextValues } from './tasksStoreContext.types';
+import { TasksStoreContextValues } from './tasks-store.context.types';
 
 // Cast type to tread data as always defined and avoid null checks because if it is null, it will throw an error
 const TasksStoreContext = createContext(
   null as unknown as TasksStoreContextValues
 );
 
-export const TasksStoreProvider = ({ children }: PropsWithChildren) => {
+export const TasksStoreProvider = ({ children }: React.PropsWithChildren) => {
   const [tasks, _setTasks] = useState<Map<string, TaskData>>(new Map());
 
   const addNewTask = (data: TaskData) => {

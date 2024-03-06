@@ -7,10 +7,14 @@ import {
   useDisclosure,
 } from '@nextui-org/react';
 import { Check, Pencil, Trash, X } from '@phosphor-icons/react';
-import ModalDeleteTask from '../modalDeleteTask/modalDeleteTask';
-import { TaskItemProps } from './taskItem.types';
+import ModalDeleteTask from '../modal-delete-task/modal-delete-task';
+import { TaskItemProps } from './task-item.types';
 
-export default function TaskItem({ task, onChangeTaskStatus }: TaskItemProps) {
+export default function TaskItem({
+  task,
+  onChangeTaskStatus,
+  onEdit,
+}: TaskItemProps) {
   const disclosure = useDisclosure();
   return (
     <>
@@ -43,7 +47,13 @@ export default function TaskItem({ task, onChangeTaskStatus }: TaskItemProps) {
 
             <div className="flex gap-2">
               <Tooltip content="Editar">
-                <Button size="sm" color="default" variant="flat" isIconOnly>
+                <Button
+                  size="sm"
+                  color="default"
+                  variant="flat"
+                  isIconOnly
+                  onClick={() => onEdit(task.id, task)}
+                >
                   <Pencil />
                 </Button>
               </Tooltip>

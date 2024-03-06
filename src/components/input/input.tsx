@@ -5,7 +5,7 @@ import {
 import { Controller, useFormContext } from 'react-hook-form';
 import { Alert } from '../alert/alert';
 import { SetRequired } from '~/types/util.types';
-import { ErrorMessages } from '~/lib/errorMessages';
+import { ErrorMessages } from '~/lib/error-messages';
 
 type InputProps = SetRequired<NextUIInputProps, 'name'> & {
   rules?: ErrorMessages;

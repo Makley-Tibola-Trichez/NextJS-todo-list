@@ -7,8 +7,8 @@ import {
   ModalHeader,
 } from '@nextui-org/react';
 
-import { ModalDeleteTaskProps } from './modalDeleteTask.types';
-import { useTasksStoreContext } from '~/context/tasksStoreContext';
+import { ModalDeleteTaskProps } from './modal-delete-task.types';
+import { useTasksStoreContext } from '~/context/tasks-store.context/tasks-store.context';
 
 export default function ModalDeleteTask({
   UseDisclosureReturn,

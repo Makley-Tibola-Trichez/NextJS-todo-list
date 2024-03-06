@@ -5,18 +5,16 @@ import {
   NavbarItem,
   Button,
   Link as NavbarLink,
-  useDisclosure,
 } from '@nextui-org/react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import ModalAddEditTask from '~/components/modalAddEditTask/modalAddEditTask';
+import { useAddEditTaskContext } from '~/context/add-edit-task.context/add-edit-task.context';
 
 export function PageNavbar() {
   const pathname = usePathname();
-  const disclosure = useDisclosure();
+  const { onOpen } = useAddEditTaskContext();
   return (
     <>
-      <ModalAddEditTask UseDisclosureReturn={disclosure} />
       <Navbar>
         <NavbarContent className="hidden sm:flex gap-4" justify="center">
           <NavbarItem isActive={pathname === '/'}>
@@ -32,11 +30,7 @@ export function PageNavbar() {
         </NavbarContent>
         <NavbarContent justify="end">
           <NavbarItem className="hidden lg:flex">
-            <Button
-              variant="shadow"
-              color="primary"
-              onClick={disclosure.onOpen}
-            >
+            <Button variant="shadow" color="primary" onClick={onOpen}>
               Nova tarefa
             </Button>
           </NavbarItem>
