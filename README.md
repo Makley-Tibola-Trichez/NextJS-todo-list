@@ -7,10 +7,10 @@ Welcome to our Todo List Web Application! This application allows you to easily 
 - [&check;] **Add Tasks**: Easily add tasks with a title and optional description.
 - [&check;] **Mark Tasks as Complete**: Mark tasks as complete when you're done with them.
 - [&check;] **Delete Tasks**: Remove tasks from your list when they're no longer needed.
+- [&check;] **Edit Tasks**: Edit task titles and descriptions as needed.
 
 ## Next features
 
-- **Edit Tasks**: Edit task titles and descriptions as needed.
 - **Empty State**: Add image with description when the lists of tasks are empty.
 - **Filter Tasks**: Filter tasks by status (complete/incomplete) or by keywords.
 - **Responsive Design**: Works seamlessly on desktop and mobile devices.
