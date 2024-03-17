@@ -9,12 +9,6 @@ Welcome to our Todo List Web Application! This application allows you to easily 
 - [&check;] **Delete Tasks**: Remove tasks from your list when they're no longer needed.
 - [&check;] **Edit Tasks**: Edit task titles and descriptions as needed.
 
-## Next features
-
-- **Empty State**: Add image with description when the lists of tasks are empty.
-- **Filter Tasks**: Filter tasks by status (complete/incomplete) or by keywords.
-- **Responsive Design**: Works seamlessly on desktop and mobile devices.
-
 ## Technologies Used
 
 - Next.js
