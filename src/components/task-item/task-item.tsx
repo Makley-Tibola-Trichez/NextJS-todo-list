@@ -23,7 +23,7 @@ export default function TaskItem({
         task={task}
         UseDisclosureReturn={disclosure}
       />
-      <Card className="flex flex-row">
+      <Card className="flex flex-row w-full">
         <div className="flex justify-center items-center pl-4">
           <Tooltip
             content={

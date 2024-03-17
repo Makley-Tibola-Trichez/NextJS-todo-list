@@ -2,6 +2,7 @@
 import { Spinner } from '@nextui-org/react';
 import { Suspense, lazy } from 'react';
 import { Backdrop } from '~/components/backdrop/backdrop';
+import { EmptyState } from '~/components/empty-state/empty-state';
 import { useAddEditTaskContext } from '~/context/add-edit-task.context/add-edit-task.context';
 import { useTasksStoreContext } from '~/context/tasks-store.context/tasks-store.context';
 import { TaskData } from '~/types/task.types';
@@ -19,7 +20,7 @@ export default function Home() {
 
   return (
     <main className="flex justify-center items-center ">
-      <div className="flex gap-4 flex-col py-8 min-w-[50%]">
+      <div className="flex gap-4 flex-col py-8 min-w-[50%] items-center">
         <Suspense
           fallback={
             <Backdrop>
@@ -36,6 +37,14 @@ export default function Home() {
             />
           ))}
         </Suspense>
+        {_undoneTasks.length === 0 ? (
+          <EmptyState
+            src="no-data.svg"
+            alt="Sem items"
+            title="
+            Parece que você não tem tarefas pendentes!"
+          />
+        ) : null}
       </div>
     </main>
   );
